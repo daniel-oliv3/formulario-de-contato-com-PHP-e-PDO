@@ -10,21 +10,23 @@
 </head>
 <body>
 
-    <h2>Formulário de Contato</h2>
+    <div class="form">
+        <h2>Formulário de Contato</h2>
 
-    <form action="" method="POST">
-        <label>Nome: </label>
-        <input type="text" name="nome" placeholder="Nome completo" required><br><br>
+        <form action="" method="POST">
+            <label>Nome: </label>
+            <input type="text" name="nome" placeholder="Nome completo" required><br><br>
 
-        <label>E-mail: </label>
-        <input type="email" name="email" placeholder="Digite o seu e-mail" required><br><br>
+            <label>E-mail: </label>
+            <input type="email" name="email" placeholder="Digite o seu e-mail" required><br><br>
 
-        <label>Assunto: </label>
-        <input type="text" name="assunto" placeholder="Assunto da mensagem" required><br><br>
+            <label>Assunto: </label>
+            <input type="text" name="assunto" placeholder="Assunto da mensagem" required><br><br>
 
-        <label>Conteúdo: </label>
-        <textarea type="text" name="conteudo" placeholder="Conteúdo da mensagem" required></textarea><br><br>
-    </form>
+            <label>Conteúdo: </label>
+            <textarea name="conteudo" rows="3" cols="50" placeholder="Conteúdo da mensagem" required></textarea><br><br>
+        </form>
+    <div>    
 
 </body>
 </html>
