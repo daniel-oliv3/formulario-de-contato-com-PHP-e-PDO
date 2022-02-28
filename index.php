@@ -18,7 +18,7 @@ include_once './conexao.php';
 
         <?php
             $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-            //var_dump($dados);
+            //var_dump($dados); 28
 
             if(!empty($dados['AddMsgCont'])){
                 var_dump($dados);
