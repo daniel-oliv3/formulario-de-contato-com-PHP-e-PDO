@@ -1,8 +1,14 @@
 body {
-    background: #FFF0F5;
+    background:	#BEBEBE;
 }
 
 .form {
-    background: #483D8B;
+    background: #D3D3D3;
     color: black;
+    text-align: center;
+}
+
+h2 {
+    color: #696969;
+    margin-bottom: 2rem;
 }

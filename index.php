@@ -13,6 +13,12 @@
     <div class="form">
         <h2>Formulário de Contato</h2>
 
+        <?php
+            $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+            var_dump($dados);
+        
+        ?>
+
         <form action="" method="POST">
             <label>Nome: </label>
             <input type="text" name="nome" placeholder="Nome completo" required><br><br>
@@ -24,7 +30,9 @@
             <input type="text" name="assunto" placeholder="Assunto da mensagem" required><br><br>
 
             <label>Conteúdo: </label>
-            <textarea name="conteudo" rows="3" cols="50" placeholder="Conteúdo da mensagem" required></textarea><br><br>
+            <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem" required></textarea><br><br>
+
+            <input type="submit" name="AddMsgCont" value="Enviar"><br><br>
         </form>
     <div>    
 
