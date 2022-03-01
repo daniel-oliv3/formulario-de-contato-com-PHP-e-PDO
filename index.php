@@ -13,12 +13,11 @@ include_once './conexao.php';
 </head>
 <body>
 
-    <div class="form">
-        <h2>Formulário de Contato</h2>
+         <h2>Formulário de Contato</h2>
 
         <?php
             $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-            //var_dump($dados); 28
+            
 
             if(!empty($dados['AddMsgCont'])){
                 var_dump($dados);
@@ -41,7 +40,7 @@ include_once './conexao.php';
 
             <input type="submit" name="AddMsgCont" value="Enviar"><br><br>
         </form>
-    <div>    
+
 
 </body>
 </html>
