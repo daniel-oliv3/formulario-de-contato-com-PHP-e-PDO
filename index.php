@@ -66,8 +66,8 @@ include_once './conexao.php';
             { echo $dados['assunto']; } ?>"><br><br>
 
             <label>Conteúdo: </label>
-            <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem"  value="<?php if(isset($dados['conteudo']))
-            { echo $dados['conteudo']; } ?>"></textarea><br><br>
+            <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem"><?php if(isset($dados['conteudo']))
+            { echo $dados['conteudo']; } ?></textarea><br><br>
 
             <input type="submit" name="AddMsgCont" value="Enviar"><br><br>
         </form>
