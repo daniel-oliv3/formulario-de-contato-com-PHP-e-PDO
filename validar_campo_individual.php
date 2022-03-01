@@ -22,10 +22,15 @@ include_once './conexao.php';
             if(!empty($dados['AddMsgCont'])){
                 var_dump($dados);
 
-                //validar TODOS os compos de uma vez
-                $dados = array_map('trim', $dados);
-                if(in_array('', $dados)){
-                    echo "<p style='color: #f00;'>Erro: Necessário preencher todos os campos!<p/>";
+                //validar cada campo individual
+                if(empty($dados['nome'])){
+                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo nome!<p/>";
+                }elseif(empty($dados['email'])){
+                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo email!<p/>";
+                }elseif(empty($dados['assunto'])){
+                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo assunto!<p/>";
+                }elseif(empty($dados['conteudo'])){
+                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo conteúdo!<p/>";
                 }else {
                     $query_contato = "INSERT INTO contatos (nome, email, assunto, conteudo) VALUES (:nome, :email, :assunto, :conteudo)";
                     $add_contato = $conn->prepare($query_contato);
