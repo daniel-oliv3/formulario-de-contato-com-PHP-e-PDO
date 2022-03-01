@@ -8,7 +8,7 @@ include_once './conexao.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de contato com PHP e PDO</title>
-    <link rel="stylesheet" href="css/style.css">
+    <!--<link rel="stylesheet" href="css/style.css">-->
     <link rel="shortcut icon" href="img/php.ico"/>
 </head>
 <body>
@@ -48,7 +48,9 @@ include_once './conexao.php';
         
         ?>
 
-        <form action="" method="POST">
+        <span id="msgAlerta"></span>
+
+        <form action="" method="POST" id="cadMsgCont">
             
             <?php 
                 $nome = "";
@@ -57,7 +59,7 @@ include_once './conexao.php';
                 }
             ?>
             <label>Nome: </label>
-            <input type="text" name="nome" placeholder="Nome completo" value="<?php echo $nome; ?>"><br><br>
+            <input type="text" name="nome" id="nome" placeholder="Nome completo" value="<?php echo $nome; ?>"><br><br>
             
             <?php 
                 $email = "";
@@ -86,9 +88,11 @@ include_once './conexao.php';
             <label>Conteúdo: </label>
             <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem"><?php echo $conteudo; ?></textarea><br><br>
 
-            <input type="submit" name="AddMsgCont" value="Enviar"><br><br>
+            <button type="submit" name="AddMsgCont">Enviar</button><br><br>
         </form>
 
+
+        <script src="js/custom.js"></script>
 
 </body>
 </html>
