@@ -1,6 +1,6 @@
 <?php
 
-//Inicio da cnexão com o banco de dados utilizando PDO
+//Inicio da conexão com o banco de dados utilizando PDO
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -21,3 +21,9 @@ try {
 }
 
 ?>
+
+<!--
+1: criar formulário de contato com PHP e PDO
+2: validar o formulário com PHP
+3: validar formulário com JavaScript
+-->

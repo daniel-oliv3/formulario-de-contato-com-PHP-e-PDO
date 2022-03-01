@@ -35,7 +35,7 @@ include_once './conexao.php';
                 if($add_contato->rowCount()){
                     echo "<p style='color: green;'>Mensagem enviada com sucesso!<p/>";
                 }else {
-                    echo "<p style='color: green;'>Erro: Mensagem  não foi enviada!<p/>";
+                    echo "<p style='color: #f00;'>Erro: Mensagem  não foi enviada!<p/>";
                 }
             }
         
