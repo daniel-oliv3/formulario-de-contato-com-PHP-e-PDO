@@ -21,6 +21,22 @@ include_once './conexao.php';
 
             if(!empty($dados['AddMsgCont'])){
                 var_dump($dados);
+
+                $query_contato = "INSERT INTO contatos (nome, email, assunto, conteudo) VALUES (:nome, :email, :assunto, :conteudo)";
+                $add_contato = $conn->prepare($query_contato);
+                $add_contato->bindParam(':nome', $dados['nome'], PDO::PARAM_STR);
+                $add_contato->bindParam(':email', $dados['email'], PDO::PARAM_STR);
+                $add_contato->bindParam(':assunto', $dados['assunto'], PDO::PARAM_STR);
+                $add_contato->bindParam(':conteudo', $dados['conteudo'], PDO::PARAM_STR);
+
+
+                $add_contato->execute();
+
+                if($add_contato->rowCount()){
+                    echo "<p style='color: green;'>Mensagem enviada com sucesso!<p/>";
+                }else {
+                    echo "<p style='color: green;'>Erro: Mensagem  não foi enviada!<p/>";
+                }
             }
         
         ?>
