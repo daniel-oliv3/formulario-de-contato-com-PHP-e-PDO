@@ -53,21 +53,42 @@ include_once './conexao.php';
         ?>
 
         <form action="" method="POST">
+            
+            <?php 
+                $nome = "";
+                if(isset($dados['nome'])){
+                    $nome = $dados['nome'];
+                }
+            ?>
             <label>Nome: </label>
-            <input type="text" name="nome" placeholder="Nome completo" value="<?php if(isset($dados['nome']))
-            { echo $dados['nome']; } ?>"><br><br>
-
+            <input type="text" name="nome" placeholder="Nome completo" value="<?php echo $nome; ?>"><br><br>
+            
+            <?php 
+                $email = "";
+                if(isset($dados['email'])){
+                    $email = $dados['email'];
+                }
+            ?>
             <label>E-mail: </label>
-            <input type="email" name="email" placeholder="Digite o seu e-mail"  value="<?php if(isset($dados['email']))
-            { echo $dados['email']; } ?>"><br><br>
+            <input type="email" name="email" placeholder="Digite o seu e-mail" value="<?php echo $email; ?>"><br><br>
 
+            <?php 
+                $assunto = "";
+                if(isset($dados['assunto'])){
+                    $assunto = $dados['assunto'];
+                }
+            ?>
             <label>Assunto: </label>
-            <input type="text" name="assunto" placeholder="Assunto da mensagem"  value="<?php if(isset($dados['assunto']))
-            { echo $dados['assunto']; } ?>"><br><br>
+            <input type="text" name="assunto" placeholder="Assunto da mensagem" value="<?php echo $assunto; ?>"><br><br>
 
+            <?php 
+                $conteudo = "";
+                if(isset($dados['conteudo'])){
+                    $conteudo = $dados['conteudo'];
+                }
+            ?>
             <label>Conteúdo: </label>
-            <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem"><?php if(isset($dados['conteudo']))
-            { echo $dados['conteudo']; } ?></textarea><br><br>
+            <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem"><?php echo $conteudo; ?></textarea><br><br>
 
             <input type="submit" name="AddMsgCont" value="Enviar"><br><br>
         </form>
