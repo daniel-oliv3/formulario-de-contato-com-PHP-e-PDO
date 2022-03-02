@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once './conexao.php';
 ?>
 <!DOCTYPE html>
@@ -7,7 +8,7 @@ include_once './conexao.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de contato com PHP e PDO</title>
+    <title>Validação com Javascript</title>
     <!--<link rel="stylesheet" href="css/style.css">-->
     <link rel="shortcut icon" href="img/php.ico"/>
 </head>
@@ -23,13 +24,13 @@ include_once './conexao.php';
 
                  //validar cada campo individual
                  if(empty($dados['nome'])){
-                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo nome!<p/>";
+                    $_SESSION['smg'] = "<p style='color: #f00;'>Erro: Necessário preencher o campo nome!<p/>";
                 }elseif(empty($dados['email'])){
-                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo email!<p/>";
+                    $_SESSION['smg'] = "<p style='color: #f00;'>Erro: Necessário preencher o campo email!<p/>";
                 }elseif(empty($dados['assunto'])){
-                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo assunto!<p/>";
+                    $_SESSION['smg'] = "<p style='color: #f00;'>Erro: Necessário preencher o campo assunto!<p/>";
                 }elseif(empty($dados['conteudo'])){
-                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo conteúdo!<p/>";
+                    $_SESSION['smg'] = "<p style='color: #f00;'>Erro: Necessário preencher o campo conteúdo!<p/>";
                 }else {
                     $query_contato = "INSERT INTO contatos (nome, email, assunto, conteudo) VALUES (:nome, :email, :assunto, :conteudo)";
                     $add_contato = $conn->prepare($query_contato);
@@ -43,11 +44,18 @@ include_once './conexao.php';
 
                     if($add_contato->rowCount()){
                         unset($dados);
-                        echo "<p style='color: green;'>Mensagem enviada com sucesso!<p/>";
+                        $_SESSION['smg'] = "<p style='color: green;'>Mensagem enviada com sucesso!<p/>";
                     }else {
-                        echo "<p style='color: #f00;'>Erro: Mensagem  não foi enviada!<p/>";
+                        $_SESSION['smg'] = "<p style='color: #f00;'>Erro: Mensagem  não foi enviada!<p/>";
                     }
                 }
+            }
+
+            if(isset($_SESSION['msg'])){
+                echo "<span id='msgAlerta'>". $_SESSION['msg'] ."</span>";
+                unset($_SESSION['msg']);
+            }else {
+                echo "<span id='msgAlerta'></span>";
             }
         
         ?>

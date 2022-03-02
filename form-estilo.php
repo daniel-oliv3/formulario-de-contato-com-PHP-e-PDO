@@ -7,7 +7,7 @@ include_once './conexao.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de contato com PHP e PDO</title>
+    <title>Formulário Estilizado</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="img/php.ico"/>
 </head>
@@ -52,46 +52,50 @@ include_once './conexao.php';
         
         ?>
 
-        <form action="" method="POST">
+        <form action="" method="POST" id="cadMsgCont">
         <fieldset class="grupo">
-        <div class="campo">
-            <?php 
-                $nome = "";
-                if(isset($dados['nome'])){
-                    $nome = $dados['nome'];
-                }
-            ?>
-            <label><strong>Nome</strong></label>
-            <input type="text" name="nome" placeholder="Nome completo" value="<?php echo $nome; ?>"><br>
+            <div class="campo">
+                <?php 
+                    $nome = "";
+                    if(isset($dados['nome'])){
+                        $nome = $dados['nome'];
+                    }
+                ?>
+                <label><strong>Nome</strong></label>
+                <input type="text" name="nome" placeholder="Nome completo" value="<?php echo $nome; ?>"><br>
             
-            <?php 
-                $email = "";
-                if(isset($dados['email'])){
-                    $email = $dados['email'];
-                }
-            ?>
-            <label><strong>E-mail</strong></label>
-            <input type="email" name="email" placeholder="Digite o seu e-mail" value="<?php echo $email; ?>"><br>       
-            <?php 
-                $assunto = "";
-                if(isset($dados['assunto'])){
-                    $assunto = $dados['assunto'];
-                }
-            ?>
-            <label><strong>Assunto</strong></label>
-            <input type="text" name="assunto" placeholder="Assunto da mensagem" value="<?php echo $assunto; ?>"><br>
-
-            <?php 
-                $conteudo = "";
-                if(isset($dados['conteudo'])){
-                    $conteudo = $dados['conteudo'];
-                }
-            ?>
-            <label><strong>Conteúdo</strong></label>
-            <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem" id="experiencia" ><?php echo $conteudo; ?></textarea><br>
-        </div>
+                <?php 
+                    $email = "";
+                    if(isset($dados['email'])){
+                        $email = $dados['email'];
+                    }
+                ?>
+                <label><strong>E-mail</strong></label>
+                <input type="email" name="email" placeholder="Digite o seu e-mail" value="<?php echo $email; ?>"><br>
+            </div>           
         </fieldset>
-            <button type="submit" name="AddMsgCont" value="Enviar"  class="botao">Enviar</button><br>
+        <fieldset class="grupo">
+            <div class="campo">        
+                <?php 
+                    $assunto = "";
+                    if(isset($dados['assunto'])){
+                        $assunto = $dados['assunto'];
+                    }
+                ?>
+                <label><strong>Assunto</strong></label>
+                <input type="text" name="assunto" placeholder="Assunto da mensagem" value="<?php echo $assunto; ?>"><br>
+
+                <?php 
+                    $conteudo = "";
+                    if(isset($dados['conteudo'])){
+                        $conteudo = $dados['conteudo'];
+                    }
+                ?>
+                <label><strong>Conteúdo</strong></label>
+                <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem" id="experiencia"><?php echo $conteudo; ?></textarea><br>
+            </div>           
+        </fieldset>
+            <button type="submit" name="AddMsgCont" value="Enviar" class="botao">Enviar</button><br>
         </form>
 
 
