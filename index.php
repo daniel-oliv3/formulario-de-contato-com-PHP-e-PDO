@@ -81,7 +81,7 @@ include_once './conexao.php';
                 }
             ?>
             <label>Assunto: </label>
-            <input type="text" name="assunto" placeholder="Assunto da mensagem" value="<?php echo $assunto; ?>"><br><br>
+            <input type="text" name="assunto" id="assunto" placeholder="Assunto da mensagem" value="<?php echo $assunto; ?>"><br><br>
 
             <?php 
                 $conteudo = "";
@@ -90,7 +90,7 @@ include_once './conexao.php';
                 }
             ?>
             <label>Conteúdo: </label>
-            <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem"><?php echo $conteudo; ?></textarea><br><br>
+            <textarea name="conteudo" id="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem"><?php echo $conteudo; ?></textarea><br><br>
 
             <button type="submit" name="AddMsgCont" value="Enviar">Enviar</button><br><br>
         </form>
