@@ -1,6 +1,6 @@
 <?php
-session_start(); //iniciar  sessão
-include_once './conexao.php'; //inclui o arquivo de conexão com o banco de dados
+session_start();
+include_once './conexao.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,7 +13,7 @@ include_once './conexao.php'; //inclui o arquivo de conexão com o banco de dado
     <link rel="shortcut icon" href="img/php.ico"/>
 </head>
 <body>
-        <!-- Formulário com validação HTML5, Javascript e PHP-->
+
          <h2>Formulário de Contato</h2>
 
         <?php
