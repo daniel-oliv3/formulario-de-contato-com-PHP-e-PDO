@@ -20,12 +20,16 @@ include_once './conexao.php';
             
 
             if(!empty($dados['AddMsgCont'])){
-                //var_dump($dados);
 
-                //validar TODOS os compos de uma vez
-                $dados = array_map('trim', $dados);
-                if(in_array('', $dados)){
-                    echo "<p style='color: #f00;'>Erro: Necessário preencher todos os campos!<p/>";
+                 //validar cada campo individual
+                 if(empty($dados['nome'])){
+                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo nome!<p/>";
+                }elseif(empty($dados['email'])){
+                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo email!<p/>";
+                }elseif(empty($dados['assunto'])){
+                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo assunto!<p/>";
+                }elseif(empty($dados['conteudo'])){
+                    echo "<p style='color: #f00;'>Erro: Necessário preencher o campo conteúdo!<p/>";
                 }else {
                     $query_contato = "INSERT INTO contatos (nome, email, assunto, conteudo) VALUES (:nome, :email, :assunto, :conteudo)";
                     $add_contato = $conn->prepare($query_contato);
@@ -68,7 +72,7 @@ include_once './conexao.php';
                 }
             ?>
             <label>E-mail: </label>
-            <input type="email" name="email" placeholder="Digite o seu e-mail" value="<?php echo $email; ?>"><br><br>
+            <input type="email" name="email" id="email" placeholder="Digite o seu e-mail" value="<?php echo $email; ?>"><br><br>
 
             <?php 
                 $assunto = "";
@@ -88,7 +92,7 @@ include_once './conexao.php';
             <label>Conteúdo: </label>
             <textarea name="conteudo" rows="3" cols="30" placeholder="Conteúdo da mensagem"><?php echo $conteudo; ?></textarea><br><br>
 
-            <button type="submit" name="AddMsgCont">Enviar</button><br><br>
+            <button type="submit" name="AddMsgCont" value="Enviar">Enviar</button><br><br>
         </form>
 
 
